@@ -1,0 +1,73 @@
+//Author: Noraim Nunez
+//19May, 2020
+
+#include <iostream>
+#include <vector>
+#include <math.h>
+
+using namespace std;
+int main(){
+
+// List of given Q.push_back values from problem.                                                   
+  std::vector<float> Q;
+  Q.push_back(2.3);
+  Q.push_back(4.7);
+  Q.push_back(0.1);
+  Q.push_back(6.4);
+  Q.push_back(3.8);
+  Q.push_back(9.6);
+  Q.push_back(9.0);
+  Q.push_back(6.1);
+  Q.push_back(7.3);
+  Q.push_back(2.2);
+
+//Part A: The Sum -------------------------------------------------------                           
+
+  //Declaring variables                                                                             
+  float Cn;
+  float QSum = 0;
+
+  //Cn is an element of all Q's. The loop continously accounts all Q.push_back variables and displa\
+ys them when running the code.                                                                      
+  for (float Cn : Q){
+    cout<<Cn<<", "<<endl;
+  }
+  //The second loop below continously sums all Q.push_backs variables in the list.                  
+  for (float Cn : Q){
+    QSum += Cn;
+  }
+  //Printing Sum                                                                                    
+  cout<<"Part A-Sum:"<<QSum<<endl;
+
+
+//Part B: The Average ---------------------------------------------------                           
+  //Declaring variables                                                                             
+  float QAvg;
+
+  //NOTE: Qsum is declared in part A                                                                
+  QAvg = QSum / Q.size();
+  cout<<"PartB-Average:"<<QAvg<<endl;
+
+
+//Part C: Standard Deviation --------------------------------------------                           
+
+  //Declaring variables                                                                             
+  float QDiff;
+  float QSqrd;
+  float QTotsum = 0;
+  float QStd;
+
+  //Cn is an element for all Q's. Ther arithmetic is the step-by-step sum for calculating the stand\
+ard deviation. NOTICE: Cn is used in Qdiff to account for all Q variables.                          
+  for (float Cn : Q){
+    QDiff = Cn - QAvg;
+    QSqrd = QDiff*QDiff;
+   QTotsum += QSqrd;
+  }
+  //Calculating standard deviation and printing the variable. NOTICE: Q.size() is a general functio\
+n in C++ that representats the size of the Q.                                                       
+  QStd = sqrt(QTotsum/Q.size());
+  cout<<"Part C-Standard Deviation:"<<QStd<<endl;
+
+  return 99;
+}
