@@ -1,0 +1,56 @@
+//Author: Noraim N. 
+
+#include <iostream>
+#include <vector>
+#include <math.h>
+
+using namespace std;
+
+int main(){
+
+  //Declaring variables                                                                                                            
+  float i;
+  float y;
+  float z;
+  float t;
+  float w;
+  float sum = 0;
+  float rsum = 0;
+  float tsum = 0;
+  float firstn = 1;
+  float lastm = 999;
+
+  //"For Loop" scans threw all integers in the givin range. i++ adds the values in an increasing order.                            
+  for (float i = firstn; i <= lastm; i++){
+
+    y = i / 3;
+    if (y==(int)y){ // If statement: When dividing all integers of i by 3 comtinously and the solution                             
+      sum += i;     // is an interger, then it will be added to the sum.                                                           
+      }
+    z = i / 5;
+    if (z==(int)z){ // If statements: When dividing all integers of i by 5 comtinously and the solution                            
+      rsum += i;    // is an interger, then it will be added to the sum.                                                           
+    }
+    t = y;
+    if (t==(int)t){ // Technically,the same if statements is included where t = y and comes with the else                          
+      tsum += i;    // statement.                                                                                                  
+    }
+    else{           //The if-else statement says: "If t=y such that the solution is an integer, add it to                          
+      w = z;       // the sum as well as when w = z equals an integer.                                                             
+      if (z==(int)z){  //NOTICE: It is neccessary to include both if statements and an if-else statements to                       
+        tsum +=i;      //correctly print out the sum of numbers in the 3 cases. Sum for 3, sum for 5, and both.                    
+     }
+  }
+   }
+     //-----Prints out the sums for 3, 5 and both     
+           cout<<"Total sum of all multiples for 3:\n"<<sum<<endl;
+      cout<<"total sum of all multiples for 55:\n"<<rsum<<endl;
+      cout<<"Total sum of all multiples for 3 and 5:\n"<<tsum<<endl;
+      //----------------------------                                                                                               
+  return 99;
+
+}
+
+// reference math in this website: https://www.quora.com/If-we-list-all-of-the-natural-numbers-below-10-that-are-multiples-of-3-or\
+-5-we-get-3-5-6-and-9-The-sum-of-these-multiples-is-23-What-are-the-sum-of-all-of-the-multiples-of-3-or-5-below-1000               
+
