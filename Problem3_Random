@@ -1,0 +1,43 @@
+//Author: Noraim Nunez                                                                                            
+
+#include <iostream>
+#include <random>
+
+using namespace std;
+
+int main(){
+  {
+
+    //General std:: for random generator to declare the scopes                                                    
+    std::random_device device; //or rd orange;                                                                    
+    std::mt19937 gen(device());
+    std::uniform_real__distribution<> dis(0,1);
+    std::vector<float> vposition;
+
+    //Declaring vector variable name. NOTE:Do statement with pushback assigns an element with vector a random num\
+ber between 0 and 1.                                                                                              
+    char ans = 'vposition';
+    do {
+      vposition.push_back(dis(gen));
+      // For statement declares a orderly, and continous position for each created element.std:: cout it the prin\
+tint output for the random vector and its position.                                                               
+        for (size_t i = 0; i<vposition.size(); i++){
+        std::cout<<"Vector:"<<vposition.at(i)<<" at position:"<<i<<endl; //Prints out the elements of the vector \
+with their position                                                                                               
+        }
+        //Asking the user if they would like to continue                                                          
+      cout<<"Would you like to re-generate? Type y or n:";
+      cin >> ans;
+
+      //User will implement y to continue, or n or any other letter to stop                                       
+    } while (ans == 'y');
+  }
+
+  return 99;
+}
+
+//////////////////////////////                                                                                    
+//Reference: https://diego.assencio.com/?index=6890b8c50169ef45b74db135063c227c                                   
+//Reference: https://en.cppreference.com/w/cpp/numeric/random/uniform_real_distribution                           
+//Reference: http://www.cplusplus.com/reference/random/uniform_real_distribution/                                 
+///////////////////////////////
